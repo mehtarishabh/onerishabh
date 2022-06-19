@@ -1,0 +1,83 @@
+// All variables
+
+// ===========================
+// Colors
+
+$elevate-blue: #33ccff;
+$dark-blue: #003366;
+$lighter-blue: #99ffff;
+$medium-electric-blue: #005c99;
+$mid-dark-blue: #0073bf;
+$mid-blue: #0099ff;
+$light-blue: #194775;
+$light-blue-background: #80ccff;
+$mid-light-blue: #0a5285;
+$mid-lighter-blue: #395c80;
+$lime: #b7e640;
+$green-dark-tint: #39742d;
+$light-gray: #b8babc;
+$lighter-gray: #f4f4f4;
+$snow: #fcfcfc;
+$cream: #f7f7f7;
+$light-gray-light-tint: #e3e3e4;
+$light-gray-dark-tint: #5d5e5f;
+$dark-gray: #ababab;
+$dark-gray-tint: #3c3d41;
+$blue-charcoal: #001e3c;
+$rich-black: #000a14;
+$dark-charcoal: #333333;
+$danger: #dc3545;
+$outline-color: #4db4e7;
+$key-lime-pearl: #d4f08c;
+
+$dark-grey: #19181A;
+$grey: #B19F9E;
+$green: #479761;
+$yellow: #CEBC81;
+$pink: #A16E83;
+
+$white: #ffffff;
+$black: #000000;
+
+$hover-black: #2c2c2c;
+$hover-dark-blue: #054b7c;
+$hover-yellow: #e9d701;
+$hover-blue: #75eaea;
+$hover-green: #52a242;
+
+$light-gray-border: rgba(141, 140, 151, 0.3);
+$border-light-gray: rgba($light-gray, 0.4);
+$border-light-blue: rgba($light-blue, 0.4);
+$background-light-blue: rgba($light-blue, 0.2);
+
+$transparent-white: rgba(255, 255, 255, 0);
+
+// ===========================
+// Viewports
+
+$screen-width: 100vw;
+
+// ===========================
+// Typography
+
+// $font-family-regular: 'GTWalsheim-Regular', serif;
+// $font-family-medium: 'GTWalsheim-Medium', serif;
+// $font-family-bold: 'GTWalsheim-Bold', serif;
+
+$font-weight-regular: 500;
+$font-weight-medium: 500;
+$font-weight-bold: 600;
+
+// ===========================
+// Icon / Button icon
+
+$header-desktop-height: 141px;
+$header-desktop-height-num: 141;
+$header-mobile-height: 81px;
+$header-mobile-height-num: 81;
+
+// ===========================
+// Z-Index
+
+$header-z-index: 100;
+$loader-z-index: $header-z-index + 1;

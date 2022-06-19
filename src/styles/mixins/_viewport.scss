@@ -1,0 +1,274 @@
+// Mixin for scale value by viewport
+// @param {String} $prop - prop
+// @param {Number} $value - value
+// @param {Number} $breakpoint - base breakpoint to scale
+// @param {Boolean} $is-important - condition with !important
+// @example
+//   @include vw(margin-top, 20, 400);
+//   // margin-top: calc(100vw / 400 * 20);
+@mixin vw($prop, $value, $breakpoint, $is-important: false) {
+  $val: calc(100vw / #{$breakpoint} * #{$value});
+  @if ($is-important) {
+    #{$prop}: $val !important;
+  } @else {
+    #{$prop}: $val;
+  }
+}
+
+// Mixin for scale value by all viewports
+// @param {String} $prop - prop
+// @param {Number} $mobile [null] - mobile size
+// @param {Number} $tablet [null] - tablet size
+// @param {Number} $desktop [null] - desktop size
+// @param {Number} $desktop-wide-xl [null] - desktop wide XL size
+@mixin vwb(
+  $prop,
+  $mobile: null,
+  $tablet: null,
+  $desktop: null,
+  $desktop-wide-xl: null
+) {
+  @if ($desktop) {
+    @if ($tablet) {
+      $scale: $bp-xl-min-num / $bp-xl-max-num;
+      $min: $desktop * $scale;
+      $bp: ($desktop / $tablet) * $bp-xl-min;
+      @if ($min < $tablet) {
+        @media only screen and (min-width: $bp-xl-min) and (max-width: $bp) {
+          @include vw($prop, $tablet, $bp-lg-max-num);
+        }
+        @media only screen and (min-width: $bp + 0.1) {
+          #{$prop}: $desktop * 1px;
+        }
+      } @else {
+        @include bp-only(xxl) {
+          #{$prop}: $desktop * 1px;
+        }
+        @include bp-only(xl) {
+          @include vw($prop, $desktop, $bp-xl-max-num);
+        }
+      }
+    } @else {
+      @include bp-only(xxl) {
+        #{$prop}: $desktop * 1px;
+      }
+      @include tablet-and-desktop-only {
+        @include vw($prop, $desktop, $bp-xl-max-num);
+      }
+    }
+  }
+  @if ($desktop-wide-xl) {
+    @if ($desktop and $desktop < $desktop-wide-xl) {
+      $scale: $bp-xxl-min-num / $bp-xxl-max-num;
+      $min: $desktop-wide-xl * $scale;
+      $bp: ($desktop-wide-xl / $desktop) * $bp-xxl-min;
+      @if ($min < $desktop) {
+        @media only screen and (min-width: $bp-xxl-min) and (max-width: $bp) {
+          @include vw($prop, $desktop, $bp-xl-max-num);
+        }
+        @media only screen and (min-width: $bp + 0.1) {
+          #{$prop}: $desktop-wide-xl * 1px;
+        }
+      } @else {
+        @include bp-only(xxl) {
+          #{$prop}: $desktop-wide-xl * 1px;
+        }
+      }
+    } @else {
+      @include bp-only(xxl) {
+        #{$prop}: $desktop-wide-xl * 1px;
+      }
+    }
+  }
+  @if ($tablet) {
+    @include bp-only(lg) {
+      @include vw($prop, $tablet, $bp-lg-max-num);
+    }
+    @if not($desktop) {
+      @include bp-up(xl) {
+        #{$prop}: $tablet * 1px;
+      }
+    }
+    @if ($mobile and $mobile < $tablet) {
+      $bp: ($bp-lg-max-num * $mobile) / $tablet;
+      @if ($bp-lg-min-num < $bp) {
+        @media only screen and (min-width: $bp-lg-min) and (max-width: $bp * 1px) {
+          #{$prop}: $mobile * 1px;
+        }
+      }
+    }
+  }
+  @if ($mobile) {
+    @include bp-only(sm) {
+      @include vw($prop, $mobile, $bp-sm-max-num);
+    }
+    @include bp-only(md) {
+      #{$prop}: $mobile * 1px;
+    }
+  }
+}
+
+// Mixin for fixed value by all breakpoints
+// @param {String} $prop - prop
+// @param {String | Number} $mobile [null] - mobile value
+// @param {String | Number} $tablet [null] - tablet value
+// @param {String | Number} $desktop [null] - desktop value
+// @param {String | Number} $desktop-wide-xl [null] - desktop wide XL value
+// @example
+//   @include breakpoint-prop(--hello, 5, 6, 7, 8);
+//   @include breakpoint-prop(--bye, null, 25px, 100%);
+@mixin breakpoint-prop(
+  $prop,
+  $mobile: null,
+  $tablet: null,
+  $desktop: null,
+  $desktop-wide-xl: null
+) {
+  @if ($mobile) {
+    @include mobile {
+      #{$prop}: $mobile;
+    }
+  }
+  @if ($tablet) {
+    @include tablet-only {
+      #{$prop}: $tablet;
+    }
+  }
+  @if ($desktop) {
+    @include desktop-only {
+      #{$prop}: $desktop;
+    }
+  }
+  @if ($desktop-wide-xl) {
+    @include desktop-wide {
+      #{$prop}: $desktop-wide-xl;
+    }
+  }
+}
+
+// Mixin for fixed value by mobile and desktop breakpoints
+// @param {String} $prop - prop
+// @param {String | Number} $mobile [null] - mobile value
+// @param {String | Number} $desktop [null] - desktop value
+// @example
+//   @include responsive-prop(width, 500, 800);
+//   @include responsive-prop(line-height, null, 25);
+@mixin responsive-prop($prop, $mobile: null, $desktop: null) {
+  @if ($mobile) {
+    @media only screen and (min-width: $bp-sm-min) and (max-width: $bp-md-max) {
+      #{$prop}: calc(#{$mobile} / #{$bp-sm-max-num} * 100vw);
+    }
+  }
+
+  @if ($desktop) {
+    #{$prop}: calc(#{$desktop} / #{$bp-xl-max-num} * 100vw);
+  }
+}
+
+// Mixin for an offset from the value calculated by responsive-prop
+// (put simply, 100vh - value calculated by responsive-prop)
+// @param {String} $prop - prop
+// @param {String | Number} $value [null] - desktop value
+// @example
+//   @include responsive-prop-offset-from-vh(min-height, 141);
+@mixin responsive-prop-offset-from-vh($prop, $value: null) {
+  @if ($value) {
+    #{$prop}: calc(100vh - (#{$value} / #{$bp-xl-max-num} * 100vw));
+  }
+}
+
+// Mixin for relative value by desktop and
+// fixed value by mobile and tablet breakpoints
+// @param {String} $prop - prop
+// @param {String | Number} $mobile [null] - mobile value
+// @param {String | Number} $tablet [null] - tablet value
+// @param {String | Number} $desktop [null] - desktop value
+// @example
+//   @include responsive-prop(width, 500, 600, 800);
+//   @include responsive-prop(line-height, null, null, 25);
+@mixin relative-prop($prop, $mobile: null, $tablet: null, $desktop: null) {
+  @if ($mobile) {
+    @media only screen and (min-width: $bp-sm-min) and (max-width: $bp-md-max) {
+      #{$prop}: $mobile * 1px;
+    }
+  }
+
+  @if ($tablet) {
+    @media only screen and (min-width: $bp-lg-min) and (max-width: $bp-lg-max) {
+      #{$prop}: $tablet * 1px;
+    }
+  }
+
+  @if ($desktop) {
+    @media only screen and (min-width: $bp-xl-min) and (max-width: $bp-xl-max) {
+      #{$prop}: calc(#{$desktop} / #{$bp-xl-max-num} * 100vw);
+    }
+    @media only screen and (min-width: $bp-xxl-min) {
+      #{$prop}: $desktop * 1px;
+    }
+  }
+}
+
+// Mixin for fixed value by all breakpoints
+// @param {String} $prop - prop
+// @param {String | Number} $mobile [null] - mobile value
+// @param {String | Number} $tablet [null] - tablet value
+// @param {String | Number} $desktop [null] - desktop value
+// @example
+//   @include flexi-relative-prop(--hello, 5, 6, 7);
+//   @include flexi-relative-prop(--bye, null, 25px, 100%);
+@mixin flexi-relative-prop(
+  $prop,
+  $mobile: null,
+  $tablet: null,
+  $desktop: null
+) {
+  @if ($mobile) {
+    @include mobile {
+      #{$prop}: $mobile;
+    }
+  }
+  @if ($tablet) {
+    @include tablet-only {
+      #{$prop}: $tablet;
+    }
+  }
+  @if ($desktop) {
+    @include desktop {
+      #{$prop}: $desktop;
+    }
+  }
+}
+
+// Mixin for custom scroll
+// @param {Number px} $size [6px] - width/height
+// @param {Number px} $radius [3px] - border radius
+// @param {String} $tumb-color [$elevate-blue] - thumb color
+// @param {String} $$back-color [$light-gray-light-tint] - background color
+// @example
+//   @include custom-scroll(3px,2px,red,blue); - custom
+//   @include custom-scroll(); - standart
+@mixin custom-scroll(
+  $size: 6px,
+  $radius: 3px,
+  $tumb-color: $elevate-blue,
+  $back-color: $light-gray-light-tint
+) {
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+  &::-webkit-scrollbar-track {
+    background: $back-color;
+    border-radius: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $tumb-color;
+    border-radius: $radius;
+  }
+
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: $tumb-color $back-color;
+  scrollbar-width: thin;
+}

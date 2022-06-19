@@ -1,0 +1,211 @@
+@import '../styles/mixins/viewport';
+@import '../styles/variables';
+
+// @font-face {
+// 	font-family: 'GTWalsheim-Bold';
+//   font-style: normal;
+//   font-weight: $font-weight-bold;
+// 	src: url('../assets/fonts/GTWalsheim-Bold.otf') format('opentype');
+//   font-display: swap;
+// }
+
+// @font-face {
+// 	font-family: 'GTWalsheim-Medium';
+//   font-style: normal;
+//   font-weight: $font-weight-medium;
+// 	src: url('../assets/fonts/GTWalsheim-Medium.otf') format('opentype');
+//   font-display: swap;
+// }
+
+// @font-face {
+// 	font-family: 'GTWalsheim-Regular';
+//   font-style: normal;
+//   font-weight: $font-weight-regular;
+// 	src: url('../assets/fonts/GTWalsheim-Regular.otf') format('opentype');
+//   font-display: swap;
+// }
+
+.container {
+  @include relative-prop(padding-left, 24, 52, 143);
+  @include relative-prop(padding-right, 24, 52, 143);
+}
+
+.container-left {
+  @include relative-prop(padding-left, 24, 52, 143);
+}
+
+.container-left-sm {
+  @include relative-prop(padding-left, 24, 46, 80);
+}
+
+.container-right {
+  @include relative-prop(padding-right, 24, 52, 143);
+}
+
+.container-margin {
+  @include relative-prop(margin-left, 24, 52, 143);
+  @include relative-prop(margin-right, 24, 52, 143);
+}
+
+.article-container-left {
+  @include relative-prop(padding-left, 24, 52, 368);
+}
+
+.article-container-right {
+  @include relative-prop(padding-right, 24, 52, 368);
+}
+
+.no-scroll {
+  overflow-y: hidden !important;
+}
+
+app-header-mobile-nav .mat-expansion-panel-body {
+  padding: 0;
+}
+
+.ng-animating .mat-expansion-panel-header {
+  height: 50px;
+}
+.ng-animating .mat-expansion-panel-content {
+  height: 0px;
+  visibility: hidden;
+}
+
+// Block margin
+// Reset user agent margin
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+ul,
+li,
+hr {
+  margin-block-end: 0;
+  margin-block-start: 0;
+  margin-inline-end: 0;
+  margin-inline-start: 0;
+}
+
+.app-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.container-center-vh {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.textHighlight-bold {
+  font-family: 'GTWalsheim-Bold';
+  font-style: normal;
+  font-weight: $font-weight-bold;
+}
+
+/* clears the ‘X’ from Internet Explorer */
+input[type='search']::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type='search']::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the ‘X’ from Chrome */
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+
+.scroll-targeted-anchor {
+  position: relative;
+  @include responsive-prop(
+    top,
+    -$header-mobile-height-num,
+    -$header-desktop-height-num
+  );
+}
+
+.cdk-global-overlay-wrapper {
+  pointer-events: auto !important;
+  overflow-y: auto !important;
+}
+
+// ======================== Themes ===========================
+
+.white {
+  background-color: $white;
+  color: $black;
+}
+
+.black {
+  background-color: $black;
+  color: $white;
+}
+
+.light_blue {
+  background-color: $light-blue-background;
+  color: $black;
+}
+
+.light_gray {
+  background-color: $lighter-gray;
+}
+
+.lime {
+  background-color: $key-lime-pearl;
+}
+
+.dark_blue {
+  background-color: $dark-blue;
+  color: white;
+}
+
+.elevate_blue {
+  background-color: $elevate-blue;
+  color: white;
+}
+
+.cream {
+  background-color: $cream;
+}
+
+.mid_blue {
+  background-color: $mid-blue;
+  color: $white;
+}
+
+.mid_dark_blue {
+  background-color: $mid-dark-blue;
+  color: $white;
+}
+
+.yellow {
+  background-color: $yellow;
+  color: $black;
+}
+
+.green_dark_tint {
+  background-color: $green-dark-tint;
+  color: $white;
+}
+
+// ======================== Themes ===========================

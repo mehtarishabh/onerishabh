@@ -1,0 +1,89 @@
+// Mixin to set up flex
+// @param {String} $v [null] - align-items
+// @param {String} $h [null] - justify-content
+// @example
+//   @include flex;
+//   // display: flex;
+// @example
+//   @include flex(center);
+//   // display: flex;
+//   // align-items: center;
+// @example
+//   @include flex(flex-start, center);
+//   // display: flex;
+//   // align-items: flex-start;
+//   // justify-content: center;
+// @example
+//   @include flex(null, flex-end);
+//   // display: flex;
+//   // justify-content: flex-end;
+@mixin flex($v: null, $h: null) {
+  display: flex;
+  @if ($v) {
+    align-items: $v;
+  }
+  @if ($h) {
+    justify-content: $h;
+  }
+}
+
+// Mixin to set up middle center. This is equivalent to `@include flex(center, center)`
+// @example
+//   @include flex-center;
+//   // display: flex;
+//   // align-items: center;
+//   // justify-content: center;
+@mixin flex-center {
+  @include flex(center, center);
+}
+
+// Mixin to set up flex column direction
+// @param {String} $v [null] - align-items
+// @param {String} $h [null] - justify-content
+// @example
+//   @include flex-column;
+//   // display: flex;
+//   // flex-direction: column;
+// @example
+//   @include flex-column(null, space-between);
+//   // display: flex;
+//   // justify-content: space-between;
+//   // flex-direction: column;
+@mixin flex-column($v: null, $h: null) {
+  @include flex($v, $h);
+  flex-direction: column;
+}
+
+// Mixin to set up flex wrap
+// @param {String} $v [null] - align-items
+// @param {String} $h [null] - justify-content
+// @example
+//   @include flex-wrap;
+//   // display: flex;
+//   // flex-wrap: wrap;
+// @example
+//   @include flex-wrap(baseline);
+//   // display: flex;
+//   // align-items: baseline;
+//   // flex-wrap: wrap;
+@mixin flex-wrap($v: null, $h: null) {
+  @include flex($v, $h);
+  flex-wrap: wrap;
+}
+
+// Mixin to set up flex nowrap
+// @param {String} $v [null] - align-items
+// @param {String} $h [null] - justify-content
+// @example
+//   @include flex-nowrap;
+//   // display: flex;
+//   // flex-wrap: nowrap;
+// @example
+//   @include flex-nowrap(baseline);
+//   // display: flex;
+//   // align-items: baseline;
+//   // flex-wrap: nowrap;
+@mixin flex-nowrap($v: null, $h: null) {
+  @include flex($v, $h);
+  flex-wrap: nowrap;
+}

@@ -1,0 +1,64 @@
+// Media query alias
+// Alias media query for small mobile size
+@mixin s-mobile {
+  @include bp-down(sm) {
+    @content;
+  }
+}
+
+// Alias media query for mobile size
+@mixin mobile {
+  @include bp-down(md) {
+    @content;
+  }
+}
+
+// Alias media query for wide screen size
+// (Bigger width than tablet)
+@mixin wide {
+  @include bp-up(lg) {
+    @content;
+  }
+}
+
+// Alias media query for desktop wide xl size
+@mixin desktop {
+  @include bp-up(xl) {
+    @content;
+  }
+}
+
+// Alias media query for desktop wide xxl size
+@mixin desktop-wide {
+  @include bp-up(xxl) {
+    @content;
+  }
+}
+
+// Alias media query for tablet size only
+@mixin tablet-only {
+  @include bp-only(lg) {
+    @content;
+  }
+}
+
+// Alias media query for desktop size only
+@mixin desktop-only {
+  @include bp-only(xl) {
+    @content;
+  }
+}
+
+// Alias media query for tablet / desktop size only
+@mixin tablet-and-desktop-only {
+  @media only screen and (min-width: $bp-lg-min) and (max-width: $bp-xl-max) {
+    @content;
+  }
+}
+
+// Alias media query for mobile landscape
+@mixin mobile-landscape {
+  @media (max-height: $bp-md-max) and (orientation: landscape) {
+    @content;
+  }
+}
