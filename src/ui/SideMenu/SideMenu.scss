@@ -1,0 +1,25 @@
+@import 'src/styles/variables';
+
+.SideMenu {
+  z-index: 1;
+  width: 120px;
+
+  &_item {
+    height: 100px;
+    background-color: $grey;
+    color: rgba($dark-grey, 0.8);
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      color: rgba($dark-grey, 0.4);
+    }
+  }
+}
+
+.active {
+  background-color: $pink;
+  color: rgba($dark-grey, 0.8);
+}

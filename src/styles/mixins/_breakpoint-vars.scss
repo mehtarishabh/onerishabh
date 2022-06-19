@@ -1,0 +1,105 @@
+$bp-sm-min: 0;
+$bp-sm-max-num: 375;
+$bp-sm-max: 375px;
+
+$bp-md-min-num: $bp-sm-max-num + 1; // 376
+$bp-md-min: $bp-sm-max + 1;
+$bp-md-max-num: 768;
+$bp-md-max: 768px;
+
+$bp-lg-min-num: $bp-md-max-num + 1; // 769
+$bp-lg-min: $bp-md-max + 1;
+$bp-lg-max-num: 1024;
+$bp-lg-max: 1024px;
+
+$bp-xl-min-num: $bp-lg-max-num + 1; // 1025
+$bp-xl-min: $bp-lg-max + 1;
+$bp-xl-max-num: 1600;
+$bp-xl-max: 1600px;
+
+$bp-xxl-min-num: $bp-xl-max-num + 1; // 1601
+$bp-xxl-min: $bp-xl-max + 1;
+$bp-xxl-max-num: 2560;
+$bp-xxl-max: 2560px;
+
+$bpScreenIdMap: (
+  sm: 1,
+  md: 2,
+  lg: 3,
+  xl: 4,
+  xxl: 5,
+);
+
+@mixin bp-only($bp) {
+  @if ($bp == 'sm') {
+    @media only screen and (max-width: $bp-sm-max) {
+      @content;
+    }
+  }
+  @if ($bp == 'md') {
+    @media only screen and (min-width: $bp-md-min) and (max-width: $bp-md-max) {
+      @content;
+    }
+  }
+  @if ($bp == 'lg') {
+    @media only screen and (min-width: $bp-lg-min) and (max-width: $bp-lg-max) {
+      @content;
+    }
+  }
+  @if ($bp == 'xl') {
+    @media only screen and (min-width: $bp-xl-min) and (max-width: $bp-xl-max) {
+      @content;
+    }
+  }
+  @if ($bp == 'xxl') {
+    @media only screen and (min-width: $bp-xxl-min) {
+      @content;
+    }
+  }
+}
+
+@mixin bp-up($bp) {
+  @if ($bp == 'md') {
+    @media only screen and (min-width: $bp-md-min) {
+      @content;
+    }
+  }
+  @if ($bp == 'lg') {
+    @media only screen and (min-width: $bp-lg-min) {
+      @content;
+    }
+  }
+  @if ($bp == 'xl') {
+    @media only screen and (min-width: $bp-xl-min) {
+      @content;
+    }
+  }
+  @if ($bp == 'xxl') {
+    @media only screen and (min-width: $bp-xxl-min) {
+      @content;
+    }
+  }
+}
+
+@mixin bp-down($bp) {
+  @if ($bp == 'sm') {
+    @media only screen and (max-width: $bp-sm-max) {
+      @content;
+    }
+  }
+  @if ($bp == 'md') {
+    @media only screen and (max-width: $bp-md-max) {
+      @content;
+    }
+  }
+  @if ($bp == 'lg') {
+    @media only screen and (max-width: $bp-lg-max) {
+      @content;
+    }
+  }
+  @if ($bp == 'xl') {
+    @media only screen and (max-width: $bp-xl-max) {
+      @content;
+    }
+  }
+}

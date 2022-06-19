@@ -1,0 +1,40 @@
+@import 'src/styles/variables';
+
+.Main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: $dark-grey;
+  position: relative;
+
+  &_title {
+    color: $yellow;
+    font-size: 60px;
+  }
+
+  &_subtitle {
+    padding-top: 10px;
+    color: $yellow;
+    font-size: 30px;
+  }
+
+  &_scrolldown {
+    height: 100px;
+    width: 120px;
+    background-color: $grey;
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba($dark-grey, 0.8);
+  }
+}
+.pink {
+  color: $pink;
+}

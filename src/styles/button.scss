@@ -1,0 +1,197 @@
+@import 'variables';
+
+@mixin button-common() {
+  border: none;
+  border-radius: 54px;
+  transition: all 200ms cubic-bezier(0.35, 0, 0.25, 1);
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  padding: 0.375rem 0.75rem;
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+}
+
+@mixin focus() {
+  &:focus {
+    box-shadow: 0 0 0 2px $outline-color;
+    outline: none;
+  }
+}
+
+.button {
+  &--black {
+    @include button-common();
+    @include focus();
+
+    background-color: $black;
+    color: $white;
+
+    &:active:hover {
+      background-color: $mid-dark-blue;
+    }
+
+    &:disabled {
+      background-color: $light-gray-light-tint;
+      color: $dark-gray;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background-color: $hover-black;
+    }
+  }
+
+  &--dark-blue,
+  &--dark_blue {
+    @include button-common();
+    @include focus();
+
+    background-color: $dark-blue;
+    color: $white;
+
+    &:active:hover {
+      background-color: $elevate-blue;
+      color: $dark-blue;
+    }
+
+    &:disabled {
+      background-color: $light-gray-light-tint;
+      color: $dark-gray;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background-color: $hover-dark-blue;
+    }
+  }
+
+  &--secondary-white {
+    @include button-common();
+    @include focus();
+
+    background-color: white;
+    color: $dark-blue;
+
+    &:disabled {
+      background-color: $light-gray-light-tint;
+      color: $dark-gray;
+    }
+
+    &:hover {
+      background-color: $light-gray;
+    }
+  }
+
+  &--secondary-gray {
+    @include button-common();
+    @include focus();
+
+    background-color: $lighter-gray;
+    color: $black;
+
+    &:hover {
+      background-color: $light-gray;
+    }
+
+    &:active:hover {
+      background-color: $dark-blue;
+      color: $white;
+    }
+
+    &:disabled,
+    &:disabled:hover {
+      background-color: $light-gray-light-tint;
+      color: $dark-gray;
+    }
+  }
+
+  &--secondary-midBlueDarkTint {
+    @include button-common();
+    @include focus();
+
+    background-color: $mid-dark-blue;
+    color: $white;
+
+    &:hover {
+      background-color: $medium-electric-blue;
+    }
+
+    &:active:hover {
+      background-color: $dark-blue;
+    }
+
+    &:disabled,
+    &:disabled:hover {
+      background-color: $light-gray-light-tint;
+      color: $dark-gray;
+      cursor: not-allowed;
+    }
+  }
+
+  &--load-more {
+    @include button-common();
+    @include focus();
+
+    background-color: $white;
+    box-shadow: 0 0 0 1px $light-gray;
+    color: $light-gray;
+    // font-family: $font-family-bold;
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 1px $mid-blue;
+      color: $mid-blue;
+    }
+  }
+
+  &--yellow {
+    @include button-common();
+    @include focus();
+
+    background-color: $yellow;
+
+    &:active:hover {
+      background-color: $white;
+    }
+
+    &:disabled {
+      background-color: $white;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background-color: $hover-yellow;
+    }
+  }
+
+  &--light_blue {
+    @include button-common();
+    @include focus();
+
+    background-color: $lighter-blue;
+
+    &:hover {
+      background-color: $hover-blue;
+    }
+  }
+
+  &--green {
+    @include button-common();
+    @include focus();
+
+    background-color: $green;
+
+    &:hover {
+      background-color: $hover-green;
+    }
+  }
+}

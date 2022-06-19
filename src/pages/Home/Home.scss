@@ -1,0 +1,65 @@
+@import 'src/styles/variables';
+
+.Home {
+  &_stickyContainer {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 8.5fr;
+    background-color: #3B3A3C;
+  }
+
+  &_sideMenu {
+    position: sticky;
+    top: 10%;
+    justify-self: end;
+    grid-column: 2/3;
+    height: fit-content;
+  }
+
+  &_skills {
+    padding-left: 5%;
+    padding-right: 20%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    grid-column: 3/4;
+  }
+
+  &_workexp, 
+  &_education,
+  &_accolades,
+  &_certifications {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    grid-column: 1/6;
+  }
+
+  &_workexp,  
+  &_accolades {
+    background-color: #252426;
+  }
+
+  &_heading {
+    color: $yellow;
+    font-size: 60px;
+    text-align: center;
+  }
+
+  &_subheading {
+    color: $yellow;
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+
+  &_details {
+    color: $yellow;
+    padding-top: 20px;
+    font-size: 20px;
+  }
+
+  &_text {
+    padding-bottom: 7px;
+  }
+}
