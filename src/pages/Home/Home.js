@@ -12,7 +12,7 @@ function Home() {
   const [containerRefs, isVisibleIndex] = useElementOnScreen({
     root: null,
     rootMargin: "0px",
-    threshold: 1
+    threshold: 0.95
   });
 
   const scrollToSection = (classname, index = null) => {
