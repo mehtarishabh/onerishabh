@@ -15,7 +15,7 @@ function About() {
         contact, edge of tomorrow, gravity, martian etc. I have also like watching horror movies. To add to it i am also watching marvel phase 4 movies 
         and series these days.
         <br /><br />
-        Besides this I like investing and reding novels.
+        Besides this I like investing and reading novels.
       </div>
     </div>
   );
