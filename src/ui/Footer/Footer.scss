@@ -26,6 +26,10 @@
     padding-right: 10px;
     color: $pink;
     padding-bottom: 3px;
+
+    @include wide {
+      padding-bottom: 0;
+    }
   }
 
   &_copyright {
