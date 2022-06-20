@@ -43,8 +43,8 @@ function Home() {
           <h1 className='Home_heading'>Skills</h1>
           <div className='Home_details'>
             <div className='Home_subheading'>Primary Skills</div>
-            <div className='Home_text'>Javascript, HTML 5, CSS 3</div>
-            <div className='Home_text'>Angular 10, Reactjs</div>
+            <div className='Home_text'>Javascript, HTML5, CSS3, SCSS</div>
+            <div className='Home_text'>Reactjs, Angular 10</div>
             <div className='Home_subheading'>Secondary Skills</div>
             <div className='Home_text'>AWS cloud services, Nodejs</div>
             <div className='Home_text'>BigQuery, MongoDb, MySql </div>
