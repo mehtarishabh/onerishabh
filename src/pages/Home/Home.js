@@ -146,7 +146,7 @@ function Home() {
             target="_blank" rel="noreferrer" className='pink'>Javascript: the Advanced Concepts</a> by Andrei Neagoi - Udemy Certification</div>
           <div className='Home_text'>3. <a href="https://www.udemy.com/course/advanced-css-and-sass/" 
             target="_blank" rel="noreferrer" className='pink'>Advanced CSS and Sass: Flexbox, Grid, Animations and More! </a> 
-            By Jonas Schmedtmann - Udemy Certification </div>
+            by Jonas Schmedtmann - Udemy Certification </div>
           <div className='Home_text'>4. <b>SEO 2022</b> by Arun Nagarathanam - Udemy Certification</div>
         </div>
       </section>
