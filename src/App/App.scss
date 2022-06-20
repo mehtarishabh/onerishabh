@@ -1,0 +1,36 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins/media-query';
+@import 'src/styles/mixins/breakpoint-vars';
+
+.App {
+  &_mainMenu {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    
+
+    @include wide {
+      top: 10%;
+      right: 10%;
+    }
+
+    &_top {
+      width: 45px;
+      border: 1px solid $green;
+    }
+
+    &_bottom {
+      width: 30px;
+      margin-top: 17px;
+      border: 1px solid $green;
+    }
+  }
+}

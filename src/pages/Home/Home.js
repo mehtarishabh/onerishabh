@@ -67,8 +67,7 @@ function Home() {
             <div className='Home_text'></div>
             <div className='Home_text'></div>
             <div className='Home_text'><b>Client - Dosist</b></div>
-            <div className='Home_text'>1. Completed ecommerce websites <a className='pink' href="https://dosist.com/" target="_blank" rel="noreferrer">dosist.com</a> and 
-              <a className='pink' href="https://dosist.ca/" target="_blank" rel="noreferrer">dosist.ca</a> from scratch till the handover to the clients.</div>
+            <div className='Home_text'>1. Completed ecommerce websites <a className='pink' href="https://dosist.com/" target="_blank" rel="noreferrer">dosist.com</a> and <a className='pink' href="https://dosist.ca/" target="_blank" rel="noreferrer">dosist.ca</a> from scratch till the handover to the clients.</div>
             <div className='Home_text'>2. Developed various features in the app during the course of development like header, Formula detail, formula finder,
               signup, session management, review order in checkout to name a few.</div>
             <div className='Home_text'>3. Lead the team in absence of team lead to successfully deliver the requirements.</div>
@@ -105,7 +104,8 @@ function Home() {
             <div className='Home_text'></div>
             <div className='Home_text'><b>Client - Prudential Financial Ltd.</b></div>
             <div className='Home_text'>1. Written Ant script for building and deploying.</div>
-            <div className='Home_text'>2. Implemented Cordova API for Camera and Push Notification. 3. Created adapters for various modules in Worklight.</div>
+            <div className='Home_text'>2. Implemented Cordova API for Camera and Push Notification.</div>
+            <div className='Home_text'>3. Created adapters for various modules in Worklight.</div>
             <div className='Home_text'></div>
             <div className='Home_text'></div>
             <div className='Home_text'><b>Client - Exxon Mobil</b></div>
@@ -119,7 +119,7 @@ function Home() {
         <div className='Home_details'>
           <div className='Home_subheading'>B. Tech: 
           </div>
-          <div className='Home_text'>Computer Science and Engineering NIT Goa</div>
+          <div className='Home_text'>Computer Science and Engineering <span className='pink'>NIT Goa</span></div>
           <div className='Home_text'>CGPA- 7.52/10</div>
           <div className='Home_subheading'>Class XII:
           </div>
