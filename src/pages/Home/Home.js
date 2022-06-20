@@ -119,7 +119,7 @@ function Home() {
         <div className='Home_details'>
           <div className='Home_subheading'>B. Tech: 
           </div>
-          <div className='Home_text'>Computer Science and Engineering NIT Goa</div>
+          <div className='Home_text'>Computer Science and Engineering <span className='pink'>NIT Goa</span></div>
           <div className='Home_text'>CGPA- 7.52/10</div>
           <div className='Home_subheading'>Class XII:
           </div>
