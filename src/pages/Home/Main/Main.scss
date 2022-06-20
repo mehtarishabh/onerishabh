@@ -9,10 +9,13 @@
   width: 100vw;
   background-color: $dark-grey;
   position: relative;
+  padding-left: 10%;
+  padding-right: 10%;
 
   &_title {
     color: $yellow;
     font-size: 60px;
+    text-align: center;
   }
 
   &_subtitle {

@@ -1,37 +1,60 @@
 @import 'src/styles/variables';
+@import 'src/styles/mixins/media-query';
+@import 'src/styles/mixins/breakpoint-vars';
 
 .Home {
   &_stickyContainer {
-    display: grid;
-    grid-template-columns: 0.5fr 1fr 8.5fr;
     background-color: #3B3A3C;
+
+    @include wide {
+      display: grid;
+      grid-template-columns: 0.5fr 1fr 8.5fr;
+    }
   }
 
   &_sideMenu {
     position: sticky;
     top: 10%;
     justify-self: end;
-    grid-column: 2/3;
+    grid-column: unset;
     height: fit-content;
+    display: none;
+
+    @include wide {
+      grid-column: 2/3;
+      display: unset;
+    }
   }
 
   &_skills {
-    padding-left: 5%;
-    padding-right: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-top: 100px;
     padding-bottom: 100px;
-    grid-column: 3/4;
+    grid-column: 2/4;
+
+    @include wide {
+      padding-left: 10%;
+      padding-right: 20%;
+      grid-column: 3/4;
+    }
   }
 
   &_workexp, 
   &_education,
   &_accolades,
   &_certifications {
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-top: 100px;
     padding-bottom: 100px;
-    grid-column: 1/6;
+    grid-column: 2/3;
+
+    @include wide {
+      padding-left: 20%;
+      padding-right: 20%;
+      grid-column: 1/6;
+    }
   }
 
   &_workexp,  
@@ -41,8 +64,12 @@
 
   &_heading {
     color: $yellow;
-    font-size: 60px;
+    font-size: 40px;
     text-align: center;
+
+    @include wide {
+      font-size: 60px;
+    }
   }
 
   &_subheading {
@@ -62,4 +89,8 @@
   &_text {
     padding-bottom: 7px;
   }
+}
+.pink {
+  color: $pink;
+  cursor: pointer;
 }

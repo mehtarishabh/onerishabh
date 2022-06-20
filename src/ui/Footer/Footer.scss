@@ -1,18 +1,51 @@
 @import 'src/styles/variables';
+@import 'src/styles/mixins/media-query';
+@import 'src/styles/mixins/breakpoint-vars';
 
 .Footer {
   padding-top: 50px;
   padding-bottom: 50px;
+  padding-left: 10%;
+  padding-right: 10%;
   background-color: $dark-grey;
   color: $yellow;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  flex-direction: column;
+
+  @include wide {
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
 
   &_icons {
     cursor: pointer;
     text-decoration: none;
     padding-right: 10px;
     color: $pink;
+    padding-bottom: 3px;
+  }
+
+  &_copyright {
+    order: 1;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+
+    @include wide {
+      order: 0;
+    }
+  }
+
+  &_iconsContainer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+
+     @include wide {
+      flex-direction: row;
+    }
   }
 }
