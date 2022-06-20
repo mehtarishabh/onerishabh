@@ -105,7 +105,8 @@ function Home() {
             <div className='Home_text'></div>
             <div className='Home_text'><b>Client - Prudential Financial Ltd.</b></div>
             <div className='Home_text'>1. Written Ant script for building and deploying.</div>
-            <div className='Home_text'>2. Implemented Cordova API for Camera and Push Notification. 3. Created adapters for various modules in Worklight.</div>
+            <div className='Home_text'>2. Implemented Cordova API for Camera and Push Notification.</div>
+            <div className='Home_text'>3. Created adapters for various modules in Worklight.</div>
             <div className='Home_text'></div>
             <div className='Home_text'></div>
             <div className='Home_text'><b>Client - Exxon Mobil</b></div>
