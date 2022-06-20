@@ -67,8 +67,7 @@ function Home() {
             <div className='Home_text'></div>
             <div className='Home_text'></div>
             <div className='Home_text'><b>Client - Dosist</b></div>
-            <div className='Home_text'>1. Completed ecommerce websites <a className='pink' href="https://dosist.com/" target="_blank" rel="noreferrer">dosist.com</a> and 
-              <a className='pink' href="https://dosist.ca/" target="_blank" rel="noreferrer">dosist.ca</a> from scratch till the handover to the clients.</div>
+            <div className='Home_text'>1. Completed ecommerce websites <a className='pink' href="https://dosist.com/" target="_blank" rel="noreferrer">dosist.com</a> and <a className='pink' href="https://dosist.ca/" target="_blank" rel="noreferrer">dosist.ca</a> from scratch till the handover to the clients.</div>
             <div className='Home_text'>2. Developed various features in the app during the course of development like header, Formula detail, formula finder,
               signup, session management, review order in checkout to name a few.</div>
             <div className='Home_text'>3. Lead the team in absence of team lead to successfully deliver the requirements.</div>
