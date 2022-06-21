@@ -6,16 +6,13 @@ function About() {
       <img className='About_image' alt="rishabh" src={window.location.origin + '/images/rishabh.jpg'}></img>
       <div className='About_text'>
         Hello, <br /><br />
-        I am Rishabh Mehta. I was born in a small town called kota in rajasthan which is very famous for engineering coaching classes.
-        I studied their till 12th and then completed my graduation from NIT goa which is one of the top colleges in india.I was 
-        so fond of gadgets and android applicatiosnthat it excited me to take computer science branch. While graduating I tried my hands 
-        a lot of front end application and mobile application frameworks.
+        I am Rishabh Mehta, born and brought up in kota, rajasthan. Kota is very famous for engineering and medical coaching classes.
+        I did my schooling from here and completed graduation from NIT Goa, which is one of the top tier college in india. I was 
+        so fond of gadgets and android applications that it encouraged me to pursue career in computer science.
         <br /><br />
-        I love watching movies in my free time. To further add to it I have watched almost all movies on space science like interstellar, 
-        contact, edge of tomorrow, gravity, martian etc. I have also like watching horror movies. To add to it i am also watching marvel phase 4 movies 
-        and series these days.
-        <br /><br />
-        Besides this I like investing and reading novels.
+        In my free time I love to watch sci fi movies like interstellar, contact, edge of tomorrow, gravity, martian etc. I am also a fan 
+        of marvel movies and series. I also love to read novels based on real personalities. Among them my favourite one 
+        is on Elon musk.
       </div>
     </div>
   );
