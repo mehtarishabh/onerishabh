@@ -12,7 +12,7 @@ function Home() {
   const [containerRefs, isVisibleIndex] = useElementOnScreen({
     root: null,
     rootMargin: "0px",
-    threshold: 1
+    threshold: 0.95
   });
 
   const scrollToSection = (classname, index = null) => {
@@ -43,8 +43,8 @@ function Home() {
           <h1 className='Home_heading'>Skills</h1>
           <div className='Home_details'>
             <div className='Home_subheading'>Primary Skills</div>
-            <div className='Home_text'>Javascript, HTML 5, CSS 3</div>
-            <div className='Home_text'>Angular 10, Reactjs</div>
+            <div className='Home_text'>Javascript, HTML5, CSS3, SCSS</div>
+            <div className='Home_text'>Reactjs, Angular 10</div>
             <div className='Home_subheading'>Secondary Skills</div>
             <div className='Home_text'>AWS cloud services, Nodejs</div>
             <div className='Home_text'>BigQuery, MongoDb, MySql </div>
@@ -142,8 +142,11 @@ function Home() {
         <div className='Home_subheading'></div>
         <div className='Home_details'>
           <div className='Home_text'>1. Completed <b>AWS Certified Developer - Associate</b> certificate.</div>
-          <div className='Home_text'>2. <b>Javascript: the Advanced Concepts</b> by Andrei Neagoi - Udemy Certification</div>
-          <div className='Home_text'>3. <b>Advanced CSS and Sass: Flexbox, Grid, Animations and More!</b> By Jonas Schmedtmann - Udemy Certification </div>
+          <div className='Home_text'>2. <a href="https://www.udemy.com/course/advanced-javascript-concepts/" 
+            target="_blank" rel="noreferrer" className='pink'>Javascript: the Advanced Concepts</a> by Andrei Neagoi - Udemy Certification</div>
+          <div className='Home_text'>3. <a href="https://www.udemy.com/course/advanced-css-and-sass/" 
+            target="_blank" rel="noreferrer" className='pink'>Advanced CSS and Sass: Flexbox, Grid, Animations and More! </a> 
+            by Jonas Schmedtmann - Udemy Certification </div>
           <div className='Home_text'>4. <b>SEO 2022</b> by Arun Nagarathanam - Udemy Certification</div>
         </div>
       </section>

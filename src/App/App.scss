@@ -15,7 +15,6 @@
     cursor: pointer;
     height: 50px;
     width: 50px;
-    
 
     @include wide {
       top: 10%;
@@ -25,14 +24,14 @@
     &_top {
       width: 45px;
       border: 1px solid $green;
-      color: $green;
+      background-color: $green;
     }
 
     &_bottom {
       width: 30px;
       margin-top: 17px;
       border: 1px solid $green;
-      color: $green;
+      background-color: $green;
     }
   }
 }
