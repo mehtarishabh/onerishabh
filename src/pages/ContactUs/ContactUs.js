@@ -67,7 +67,7 @@ function ContactUs() {
       }
       <div className='ContactUs_wrapper'>
         <span className='ContactUs_text'><b>Phone: </b></span>
-        <span className='ContactUs_data'>+918747824255</span>
+        <span className='ContactUs_data'>+91 8747824255</span>
       </div>
       <div className='ContactUs_wrapper'>
         <span className='ContactUs_text'><b>Email: </b></span>
