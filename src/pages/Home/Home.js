@@ -63,7 +63,7 @@ function Home() {
             <div className='Home_text'>2. Involved in understanding requirements, task creation, estimation, allocation to respective teams, PR reviews etc.</div>
             <div className='Home_text'>3. Build various responsive components for the project along with initial setup and defining guidelines etc.</div>
             <div className='Home_text'>4. Worked on components such as navigation menu, quiz animation etc to name a few.</div>
-            <div className='Home_text'>Technologies Used - Angular 10, Nodejs, Cloud CMS, Azure</div>
+            <div className='Home_text'><b>Technologies Used</b> - Angular 10, Nodejs, Cloud CMS, Azure</div>
             <div className='Home_text'></div>
             <div className='Home_text'></div>
             <div className='Home_text'><b>Client - Dosist</b></div>
