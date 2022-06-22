@@ -1,4 +1,6 @@
 @import 'src/styles/variables';
+@import 'src/styles/mixins/media-query';
+@import 'src/styles/mixins/breakpoint-vars';
 
 .ContactUs {
   padding-top: 100px;
@@ -9,16 +11,77 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  &_image {
-    border-radius: 50%;
-    height: 200px;
-    width: 200px;
+  
+  &_title {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 30px;
+    color: $yellow;
   }
 
-  &_text {
+  &_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    &_name, &_email, &_number, &_message, &_submit {
+      margin-top: 20px;
+      padding: 7px;
+      width: 100%;
+      background-color: rgba($dark-grey, 0);
+      font-size: 18px;
+      color: $yellow;
+      border: 1px solid rgba($yellow, 0.4);
+
+      &:focus {
+        border: 1px solid $pink;
+        outline: none;
+      }
+
+      @include wide {
+        width: 60%;
+      }
+    }
+
+    &_message {
+      height: 100px;
+    }
+
+    &_submit {
+      background-color: $pink;
+      color: rgba($dark-grey, 0.85);
+      border: 0;
+      margin-bottom: 20px;
+      cursor: pointer;
+
+      &:disabled {
+        background-color: rgba($pink, 0.5);
+        color: rgba($dark-grey, 0.5);
+        cursor: unset;
+      }
+    }
+  }
+
+  &_wrapper {
+    padding-top: 30px;
+    padding-left: 0;
+    align-self: flex-start;
+
+    @include wide {
+      padding-left: 20%;
+    }
+  }
+
+  &_text, &_data {
     padding-top: 30px;
     font-size: 20px;
     color: $yellow;
+    padding-right: 5px;
   }
+
+  &_data:hover {
+    text-decoration: underline;
+  }
+
 }
