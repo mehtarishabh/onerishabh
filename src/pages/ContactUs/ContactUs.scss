@@ -39,6 +39,10 @@
         outline: none;
       }
 
+      &::placeholder {
+        color: rgba($yellow, 0.5);
+      }
+
       @include wide {
         width: 60%;
       }

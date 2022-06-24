@@ -13,6 +13,14 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  animation: 1s linear 0s forwards delayedShow ;
+
+  @keyframes delayedShow {
+    to {
+      opacity: 1;
+    }
+  }
 
   @include wide {
     top: 10%;
