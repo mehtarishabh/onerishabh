@@ -7,48 +7,19 @@
   top: 0;
   right: 0;
   z-index: 1;
+  background: transparent;
   background-color: $grey;
   color: rgba($dark-grey, 0.8);
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  opacity: 0;
-  animation: 1s linear 0s forwards delayedShow ;
-
-  @keyframes delayedShow {
-    to {
-      opacity: 1;
-    }
-  }
 
   @include wide {
     top: 10%;
     right: 10%;
     width: unset;
     height: unset;
-  }
-
-  &_close {
-    font-size: 25px;
-    text-align: center;
-    cursor: pointer;
-    align-self: flex-end;
-    padding-top: 5%;
-    padding-right: 10px;
-    height: 65px;
-    width: 65px;
-
-    &:hover {
-      color: rgba($dark-grey, 0.4);
-    }
-
-    @include wide {
-      padding-top: 10px;
-      padding-right: unset;
-      height: 50px;
-      width: 50px;
-    }
   }
 
   &_items {
@@ -65,4 +36,76 @@
       color: rgba($dark-grey, 0.4);
     }
   }
+
+  &_empty {
+    height: 115px;
+
+    @include wide {
+      height: 55px;
+    }
+  }
+}
+label {
+  display:flex;
+  flex-direction:column;
+  width: 40px;
+  cursor:pointer;
+  background: transparent;
+  z-index: 2;
+  align-self: end;
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  margin: 10px;
+
+  @include wide {
+    top: 10%;
+    right: 10%;
+  }
+}
+label span {
+  background: #fff;
+  border-radius:10px;
+  height: 3px;
+  margin: 5px 0;
+  transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  background-color: $green;
+}
+span:nth-of-type(1){
+  width:50%;
+}
+span:nth-of-type(2){
+  width:100%;
+}
+span:nth-of-type(3){
+  width:75%;
+}
+input[type="checkbox"]{
+  display:none;
+}
+input[type="checkbox"]:checked ~ span {
+  &:hover {
+    background-color: rgba($dark-grey, 0.4);
+  }
+}
+input[type="checkbox"]:checked ~ span:nth-of-type(1){
+  transform-origin:bottom;
+  transform:rotatez(45deg) translate(6px,3px);
+  background-color: rgba($dark-grey, 0.8);
+  height: 2px;
+  width: 40%;
+}
+input[type="checkbox"]:checked ~ span:nth-of-type(2){
+  transform-origin:top;
+  transform:rotatez(-45deg);
+  background-color: rgba($dark-grey, 0.8);
+  height: 2px;
+  width: 80%;
+}
+input[type="checkbox"]:checked ~ span:nth-of-type(3){
+  transform-origin:bottom;
+  width: 40%;
+  transform: translate(14px,-6px) rotatez(45deg);
+  background-color: rgba($dark-grey, 0.8);
+  height: 2px;
 }
