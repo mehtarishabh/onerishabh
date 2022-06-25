@@ -1893,6 +1893,11 @@
   resolved "https://registry.npmjs.org/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
+"@mehtarishabh/intersection-observer-array@^1.0.1":
+  version "1.0.1"
+  resolved "https://npm.pkg.github.com/download/@mehtarishabh/intersection-observer-array/1.0.1/d7b7a92c1c469cfb616649b03b5cbc9d985705c0f43d313735ee37787a90b8df#ac3c1cf0ac651393de2e876aa7539c2dcd60d6a2"
+  integrity sha512-CXhb3bGAtqAxZ+jgEVxdTlEDYr6TIssSsGTn48ithHyIU3fau+GsSd8b+zsNvQ+caRAxwcyM6auVWzdNn8KK4A==
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
