@@ -6,6 +6,7 @@ import './App.scss';
 import MainMenu from "../ui/MainMenu/MainMenu";
 
 const Home = lazy(() => import('../pages/Home/Home'));
+const Projects = lazy(() => import('../pages/Projects/Projects'));
 const About = lazy(() => import('../pages/About/About'));
 const ContactUs = lazy(() => import('../pages/ContactUs/ContactUs'));
 const renderLoader = () => <p>Loading</p>;
@@ -18,6 +19,7 @@ function App() {
           <MainMenu />
           <Routes>
             <Route exact path="/" element={<Home />}></Route>
+            <Route exact path="/projects" element={<Projects />}></Route>
             <Route exact path="/about" element={<About />}></Route>
             <Route exact path="/contact" element={<ContactUs />}></Route>
             <Route render={() => <h1>Not found</h1>}></Route>
