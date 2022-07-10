@@ -27,7 +27,7 @@ function MainMenu() {
   return (
       <div ref={wrapperRef}>
         <label htmlFor="check">
-          <input type="checkbox" id="check" ref={inputRef} 
+          <input type="checkbox" id="check" ref={inputRef} data-testid="menu-link"
             onClick={() => setShowMenu(!showMenu)} /> 
           <span></span>
           <span></span>
@@ -35,9 +35,9 @@ function MainMenu() {
         </label>
       {showMenu && <div className='MainMenu'>
         <div className='MainMenu_empty'></div>
-        <NavLink to="/" className="MainMenu_items" onClick={() => { setShowMenu(false); inputRef.current.click(); }}>Home</NavLink>
-        <NavLink to="/contact" className="MainMenu_items" onClick={() => { setShowMenu(false); inputRef.current.click(); }}>Contact</NavLink>
-        <NavLink to="/about" className="MainMenu_items" onClick={() => { setShowMenu(false); inputRef.current.click(); }}>About</NavLink>
+        <NavLink to="/" data-testid="home-link" className="MainMenu_items" onClick={() => { setShowMenu(false); inputRef.current.click(); }}>Home</NavLink>
+        <NavLink to="/contact"  data-testid="contact-link" className="MainMenu_items" onClick={() => { setShowMenu(false); inputRef.current.click(); }}>Contact</NavLink>
+        <NavLink to="/about" data-testid="about-link" className="MainMenu_items" onClick={() => { setShowMenu(false); inputRef.current.click(); }}>About</NavLink>
       </div>}
     </div>
   );

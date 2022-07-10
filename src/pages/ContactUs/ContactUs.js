@@ -18,7 +18,6 @@ function ContactUs() {
   const createContact = async (e) => {
     e.preventDefault();
     try {
-      alert(msg);
       const docRef = await addDoc(contactRef, { name: name, email: email, phone_number: phoneNo, message: msg });
       console.log("Document written with ID: ", docRef.id);
       setName("");
@@ -42,7 +41,7 @@ function ContactUs() {
 
   return (
     <div className='ContactUs'>
-      <h1 className='ContactUs_title'>
+      <h1 data-testid="contact-title" className='ContactUs_title'>
         <b>Get In Touch</b>
       </h1>
       {!submitted && <form className='ContactUs_form' onSubmit={createContact}>

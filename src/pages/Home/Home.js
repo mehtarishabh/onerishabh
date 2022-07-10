@@ -3,6 +3,7 @@ import { scroller } from "react-scroll";
 
 import Main from './Main/Main';
 import useElementOnScreen from '../../hooks/useElementOnScreen.js';
+import useContentful from '../../hooks/useContentful';
 import SideMenu from '../../ui/SideMenu/SideMenu';
 import './Home.scss';
 
@@ -14,6 +15,7 @@ function Home() {
     rootMargin: "0px",
     threshold: 0.95
   });
+  const entry = useContentful(process.env.REACT_APP_CONTENTFUL.portfolio);
 
   const scrollToSection = (classname, index = null) => {
     if(index !== null) setActiveIndex(index);
@@ -34,7 +36,7 @@ function Home() {
 
   return (
     <div className='Home'>
-      <Main onScrolldownClick={() => scrollToSection("Home_skills")}/>
+      <Main onScrolldownClick={() => scrollToSection("Home_skills")} name={entry.name} designation={entry.designation}/>
       <div className='Home_stickyContainer'>
         <div className='Home_sideMenu'>
           <SideMenu onSideMenuClick={(index) => scrollToSection(menuItemsClass[index], index)} activeIndex={activeIndex}/>
