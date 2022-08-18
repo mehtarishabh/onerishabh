@@ -86,7 +86,7 @@ function Home() {
             <div className='Home_text'><b>Technologies Used</b> - Typescript, NodeJs, Angular4, mariaDb, Cvs</div>      
 
           <div className='Home_subheading'>Mubble Networks Pvt. Ltd. (Product Engineer) </div>
-            <div className='Home_text'>Jan 2016 - Mar 2017</div>
+            <div className='Home_text'>July 2014 - Mar 2017</div>
             <div className='Home_text'></div>
             <div className='Home_text'>1. Done the setup of BigQuery data on Google studio.</div>
             <div className='Home_text'>2. Handling manual and automated FCM(Firebase Cloud Messaging) notifications using nodejs and google’s BigQuery.</div>
@@ -96,22 +96,8 @@ function Home() {
             available framework of company.</div>
             <div className='Home_text'>6. Involved in AWS services like EC2, EMR, S3, CloudWatch with spark and scala for handling big data stored in s3.</div>
             <div className='Home_text'>7. Worked on Big data report generation using spark, scala, AWS EMR and S3.</div>
-
-
-          <div className='Home_subheading' ref={el => (containerRefs.current = [...containerRefs.current, el])}>IBM (Application Developer)</div>
-            <div className='Home_text'>Jul 2014 - Jan 2016</div>
-            <div className='Home_text'></div>
-            <div className='Home_text'></div>
-            <div className='Home_text'><b>Client - Prudential Financial Ltd.</b></div>
-            <div className='Home_text'>1. Written Ant script for building and deploying.</div>
-            <div className='Home_text'>2. Implemented Cordova API for Camera and Push Notification.</div>
-            <div className='Home_text'>3. Created adapters for various modules in Worklight.</div>
-            <div className='Home_text'></div>
-            <div className='Home_text'></div>
-            <div className='Home_text'><b>Client - Exxon Mobil</b></div>
-            <div className='Home_text'>1. Fixed bugs on the SpeedPass+ app and database handling.</div>
-            <div className='Home_text'>2. Worked on Reactjs.</div>
-            <div className='Home_text'>3. Used Tealeaf for analytics and Jenkins for automated build and deployment.</div>
+            <div className='Home_text'>8. Handled database to support the app.</div>
+            <div className='Home_text'>9. Implemented reusable components on the Reactjs web app.</div>
         </div>
       </section>
       <section className={menuItemsClass[2]} ref={el => (containerRefs.current = [...containerRefs.current, el])}>
