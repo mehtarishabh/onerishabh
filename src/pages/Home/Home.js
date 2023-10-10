@@ -46,8 +46,8 @@ function Home() {
             <div className='Home_text'>Javascript, HTML5, CSS3, SCSS</div>
             <div className='Home_text'>Reactjs, Angular 10</div>
             <div className='Home_subheading'>Secondary Skills</div>
-            <div className='Home_text'>AWS cloud services, Nodejs</div>
-            <div className='Home_text'>BigQuery, MongoDb, MySql </div>
+            <div className='Home_text'>AWS cloud services, Nodejs, Python</div>
+            <div className='Home_text'>BigQuery, MongoDb, MySql, DynamoDb</div>
             <div className='Home_text'>Contentful, Strapi, CloudCMS</div>
           </div>
         </section>
@@ -55,8 +55,17 @@ function Home() {
         <h1 className='Home_heading'>Work Experience</h1>
         <div className='Home_details'>
 
-          <div className='Home_subheading' ref={el => (containerRefs.current = [...containerRefs.current, el])}>Y Media Labs (Senior Software Engineer)</div>
-            <div className='Home_text'>Feb 2019 - Present</div>
+        <div className='Home_subheading' ref={el => (containerRefs.current = [...containerRefs.current, el])}>Bhanzu (SDE-5 Technical Lead)</div>
+            <div className='Home_text'>Oct 2022 - Present</div>
+            <div className='Home_text'></div>
+            <div className='Home_text'></div>
+            <div className='Home_text'>1. Collaborated with product mangers to finalize the designs, gathered requirements and contributed in the UX designs.</div>
+            <div className='Home_text'>2. Lead and managed a team of 4 devs for the development of <a className='pink'>Teacher Dashboard</a> project.</div>
+            <div className='Home_text'>3. Build minor features in Admin Console, Student Dashboard, Comms Platform and Refunds.</div>
+            <div className='Home_text'>4. Implemented <a className='pink'>Quality Control</a> platform from scratch.</div>
+
+          <div className='Home_subheading'>Y Media Labs (Senior Software Engineer)</div>
+            <div className='Home_text'>Feb 2019 - Sep 2022</div>
             <div className='Home_text'></div>
             <div className='Home_text'><b>Client - Elevate</b></div>
             <div className='Home_text'>1. Successfully completed the project <a className='pink' href="https://www.elevate.com/" target="_blank" rel="noreferrer">elevate.com</a> from scratch till the handover by leading a team of 5 developers.</div>
