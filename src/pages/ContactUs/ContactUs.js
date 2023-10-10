@@ -70,6 +70,10 @@ function ContactUs() {
         <span className='ContactUs_data'>+91 8747824255</span>
       </div>
       <div className='ContactUs_wrapper'>
+        <span className='ContactUs_text'><b>Whatsapp: </b></span>
+        <span className='ContactUs_data'>+91 9405334438</span>
+      </div>
+      <div className='ContactUs_wrapper'>
         <span className='ContactUs_text'><b>Email: </b></span>
         <span className='ContactUs_data'>mehta.rishabh0@gmail.com</span>
       </div>
