@@ -143,7 +143,7 @@ function Home() {
             target="_blank" rel="noreferrer" className='pink'>Advanced CSS and Sass: Flexbox, Grid, Animations and More! </a> 
             by Jonas Schmedtmann - Udemy Certification </div>
           <div className='Home_text'>4. <b>SEO 2022</b> by Arun Nagarathanam - Udemy Certification</div>
-          <div className='Home_text'>3. <a href="https://www.udemy.com/course/the-complete-nodejs-developer-course-2/" 
+          <div className='Home_text'>5. <a href="https://www.udemy.com/course/the-complete-nodejs-developer-course-2/" 
             target="_blank" rel="noreferrer" className='pink'>The Complete Node.js Developer Course </a>
             by Andrew Mead - Udemy Certification </div>
         </div>
