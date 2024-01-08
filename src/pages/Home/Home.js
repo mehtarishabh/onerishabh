@@ -43,7 +43,7 @@ function Home() {
           <h1 className='Home_heading'>Skills</h1>
           <div className='Home_details'>
             <div className='Home_subheading'>Primary Skills</div>
-            <div className='Home_text'>Javascript, HTML5, CSS3, SCSS</div>
+            <div className='Home_text'>Javascript, Typescript, HTML5, CSS3, SCSS</div>
             <div className='Home_text'>Reactjs, Angular 10</div>
             <div className='Home_subheading'>Secondary Skills</div>
             <div className='Home_text'>AWS cloud services, Nodejs, Python</div>
@@ -143,6 +143,9 @@ function Home() {
             target="_blank" rel="noreferrer" className='pink'>Advanced CSS and Sass: Flexbox, Grid, Animations and More! </a> 
             by Jonas Schmedtmann - Udemy Certification </div>
           <div className='Home_text'>4. <b>SEO 2022</b> by Arun Nagarathanam - Udemy Certification</div>
+          <div className='Home_text'>3. <a href="https://www.udemy.com/course/the-complete-nodejs-developer-course-2/" 
+            target="_blank" rel="noreferrer" className='pink'>The Complete Node.js Developer Course </a>
+            by Andrew Mead - Udemy Certification </div>
         </div>
       </section>
       </div>
