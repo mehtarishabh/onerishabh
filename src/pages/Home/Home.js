@@ -130,7 +130,8 @@ function Home() {
         <div className='Home_subheading'></div>
         <div className='Home_details'>
           <div className='Home_text'>1. Among top 0.01% out of 13 lakh students in AIEEE exam. </div>
-          <div className='Home_text'>2. State level chess player in 2006.</div></div>
+          <div className='Home_text'>2. State level chess player in 2006.</div>
+          <div className='Home_text'>3. Achieved 2 star in leetcode; having solved 300 problems.</div></div>
       </section>
       <section className={menuItemsClass[4]} ref={el => (containerRefs.current = [...containerRefs.current, el])}>
         <h1 className='Home_heading'>Certifications</h1>
