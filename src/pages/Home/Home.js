@@ -44,7 +44,7 @@ function Home() {
           <div className='Home_details'>
             <div className='Home_subheading'>Primary Skills</div>
             <div className='Home_text'>Javascript, Typescript, HTML5, CSS3, SCSS</div>
-            <div className='Home_text'>Reactjs, Angular 10</div>
+            <div className='Home_text'>Reactjs, Vue.js, Angular 10</div>
             <div className='Home_subheading'>Secondary Skills</div>
             <div className='Home_text'>AWS cloud services, Nodejs, Python</div>
             <div className='Home_text'>BigQuery, MongoDb, MySql, DynamoDb</div>
@@ -147,6 +147,9 @@ function Home() {
           <div className='Home_text'>5. <a href="https://www.udemy.com/course/the-complete-nodejs-developer-course-2/" 
             target="_blank" rel="noreferrer" className='pink'>The Complete Node.js Developer Course </a>
             by Andrew Mead - Udemy Certification </div>
+          <div className='Home_text'>6. <a href="https://www.udemy.com/course/vuejs-2-the-complete-guide/" 
+            target="_blank" rel="noreferrer" className='pink'>Vue - The Complete Guide (incl. Router & Composition API) </a>
+            by Maximilian Schwarzmüller - Udemy Certification </div>
         </div>
       </section>
       </div>
