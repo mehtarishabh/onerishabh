@@ -55,12 +55,20 @@ function Home() {
         <h1 className='Home_heading'>Work Experience</h1>
         <div className='Home_details'>
 
-        <div className='Home_subheading' ref={el => (containerRefs.current = [...containerRefs.current, el])}>Bhanzu (SDE-5 Technical Lead)</div>
-            <div className='Home_text'>Oct 2022 - Present</div>
+        <div className='Home_subheading' ref={el => (containerRefs.current = [...containerRefs.current, el])}>Tanla Platforms (SDE-4 Technical Lead)</div>
+            <div className='Home_text'>Feb 2023 - Present</div>
+            <div className='Home_text'></div>
+            <div className='Home_text'></div>
+            <div className='Home_text'>1. Worked closely with product managers and technical architects to refine requirements and designs.</div>
+            <div className='Home_text'>2. Led and managed a team of four developers in the creation of an Enterprise Approval framework.</div>
+            <div className='Home_text'>3. Developed interactive graphs using Plotly to enhance data visualization capabilities.</div>
+          
+          <div className='Home_subheading'>Bhanzu (SDE-5 Technical Lead)</div>
+            <div className='Home_text'>Oct 2022 - Aug 2023</div>
             <div className='Home_text'></div>
             <div className='Home_text'></div>
             <div className='Home_text'>1. Collaborated with product mangers to finalize the designs, gathered requirements and contributed in the UX designs.</div>
-            <div className='Home_text'>2. Lead and managed a team of 4 devs for the development of <a className='pink'>Teacher Dashboard</a> project.</div>
+            <div className='Home_text'>2. Led and managed a team of 4 devs for the development of <a className='pink'>Teacher Dashboard</a> project.</div>
             <div className='Home_text'>3. Build minor features in Admin Console, Student Dashboard, Comms Platform and Refunds.</div>
             <div className='Home_text'>4. Implemented <a className='pink'>Quality Control</a> platform from scratch.</div>
 
