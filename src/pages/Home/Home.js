@@ -60,7 +60,7 @@ function Home() {
             <div className='Home_text'></div>
             <div className='Home_text'></div>
             <div className='Home_text'>1. Achieved a significant reduction in Net Promoter Score (NPS) and streamlined enterprise onboarding from 24 hours to just 30 minutes.</div>
-            <div className='Home_text'>2. Led a team of four developers in designing and implementing an Enterprise Approval framework, enhancing operational efficiency and user experience.</div>
+            <div className='Home_text'>2. Led a team of four developers in designing and implementing an <a className='pink'>Enterprise Approval framework</a>, enhancing operational efficiency and user experience.</div>
             <div className='Home_text'>3. Developed interactive data visualization tools using Plotly, improving data representation
                                           and analysis capabilities for stakeholders.</div>
           
