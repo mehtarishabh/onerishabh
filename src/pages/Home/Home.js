@@ -56,7 +56,7 @@ function Home() {
         <div className='Home_details'>
 
         <div className='Home_subheading' ref={el => (containerRefs.current = [...containerRefs.current, el])}>Tanla Platforms (SDE-4 Technical Lead)</div>
-            <div className='Home_text'>Feb 2023 - Present</div>
+            <div className='Home_text'>Feb 2024 - Present</div>
             <div className='Home_text'></div>
             <div className='Home_text'></div>
             <div className='Home_text'>1. Achieved a significant reduction in Net Promoter Score (NPS) and streamlined enterprise onboarding from 24 hours to just 30 minutes.</div>
