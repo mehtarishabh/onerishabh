@@ -59,9 +59,10 @@ function Home() {
             <div className='Home_text'>Feb 2023 - Present</div>
             <div className='Home_text'></div>
             <div className='Home_text'></div>
-            <div className='Home_text'>1. Worked closely with product managers and technical architects to refine requirements and designs.</div>
-            <div className='Home_text'>2. Led and managed a team of four developers in the creation of an Enterprise Approval framework.</div>
-            <div className='Home_text'>3. Developed interactive graphs using Plotly to enhance data visualization capabilities.</div>
+            <div className='Home_text'>1. Achieved a significant reduction in Net Promoter Score (NPS) and streamlined enterprise onboarding from 24 hours to just 30 minutes.</div>
+            <div className='Home_text'>2. Led a team of four developers in designing and implementing an Enterprise Approval framework, enhancing operational efficiency and user experience.</div>
+            <div className='Home_text'>3. Developed interactive data visualization tools using Plotly, improving data representation
+                                          and analysis capabilities for stakeholders.</div>
           
           <div className='Home_subheading'>Bhanzu (SDE-5 Technical Lead)</div>
             <div className='Home_text'>Oct 2022 - Aug 2023</div>
