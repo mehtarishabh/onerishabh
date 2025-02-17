@@ -61,8 +61,10 @@ function Home() {
             <div className='Home_text'></div>
             <div className='Home_text'>1. Achieved a significant reduction in Net Promoter Score (NPS) and streamlined enterprise onboarding from 24 hours to just 30 minutes.</div>
             <div className='Home_text'>2. Led a team of four developers in designing and implementing an <a className='pink'>Enterprise Approval framework</a>, enhancing operational efficiency and user experience.</div>
-            <div className='Home_text'>3. Developed interactive data visualization tools using Plotly, improving data representation
+            <div className='Home_text'>3. Strengthened security measures to protect sensitive enterprise data, ensuring compliance with industry standards and increasing stakeholder trust.</div>
+            <div className='Home_text'>4. Developed interactive data visualization tools using Plotly, improving data representation
                                           and analysis capabilities for stakeholders.</div>
+            <div className='Home_text'><b>Technologies Used</b> - Vue.js, Vuex, Javascript, HTML, CSS, PrimeVue, keycloak, plotly etc.</div>
           
           <div className='Home_subheading'>Bhanzu (SDE-5 Technical Lead)</div>
             <div className='Home_text'>Oct 2022 - Aug 2023</div>
@@ -72,6 +74,7 @@ function Home() {
             <div className='Home_text'>2. Led and managed a team of 4 devs for the development of <a className='pink'>Teacher Dashboard</a> project.</div>
             <div className='Home_text'>3. Build minor features in Admin Console, Student Dashboard, Comms Platform and Refunds.</div>
             <div className='Home_text'>4. Implemented <a className='pink'>Quality Control</a> platform from scratch.</div>
+            <div className='Home_text'><b>Technologies Used</b> - React.js, Redux, Javascript, Typescript, HTML, CSS, Material UI, AWS, Python etc.</div>
 
           <div className='Home_subheading'>Y Media Labs (Senior Software Engineer)</div>
             <div className='Home_text'>Feb 2019 - Sep 2022</div>
@@ -79,8 +82,8 @@ function Home() {
             <div className='Home_text'><b>Client - Elevate</b></div>
             <div className='Home_text'>1. Successfully completed the project <a className='pink' href="https://www.elevate.com/" target="_blank" rel="noreferrer">elevate.com</a> from scratch till the handover by leading a team of 5 developers.</div>
             <div className='Home_text'>2. Involved in understanding requirements, task creation, estimation, allocation to respective teams, PR reviews etc.</div>
-            <div className='Home_text'>3. Build various responsive components for the project along with initial setup and defining guidelines etc.</div>
-            <div className='Home_text'>4. Worked on components such as navigation menu, quiz animation etc to name a few.</div>
+            <div className='Home_text'>3. Built various responsive components for the project, including the navigation menu, quiz animation, and initial setup while defining development guidelines.</div>
+            <div className='Home_text'>4. Optimized SEO, boosting site visibility and organic traffic.</div>
             <div className='Home_text'><b>Technologies Used</b> - Angular 10, Nodejs, Cloud CMS, Azure</div>
             <div className='Home_text'></div>
             <div className='Home_text'></div>
