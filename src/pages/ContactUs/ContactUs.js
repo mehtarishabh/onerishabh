@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { collection, addDoc } from "firebase/firestore";
 
 import './ContactUs.scss';
-import { db } from "../../firebase-config";
+
+const CONTACT_API = "/api/contact";
 
 function ContactUs() {
   const [submitted, setSubmitted] = useState(false);
@@ -11,35 +11,51 @@ function ContactUs() {
   const [phoneNo, setPhoneNo] = useState("");
   const [msg, setMsg] = useState("");
   const [err, setErr] = useState("");
+  const [loading, setLoading] = useState(false);
   const [isEnabled, setIsEnabled] = useState(false);
-  const contactRef = collection(db, "contact");
 
   const createContact = async (e) => {
     e.preventDefault();
     setErr("");
+    setLoading(true);
+
     try {
-      const docRef = await addDoc(contactRef, {
-        name,
-        email,
-        phone_number: phoneNo,
-        message: msg,
+      const res = await fetch(CONTACT_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          phone_number: phoneNo,
+          message: msg,
+        }),
       });
-      console.log("Document written with ID: ", docRef.id);
+
+      const body = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        throw new Error(body.error || "Failed to send message");
+      }
+
       setName("");
       setEmail("");
       setPhoneNo("");
       setMsg("");
       setSubmitted(true);
     } catch (error) {
-      console.error("Error adding document: ", error);
-      setErr(
-        error instanceof Error ? error.message : "Failed to save message",
-      );
+      setErr(error instanceof Error ? error.message : "Failed to send message");
+    } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
-    if (name.length > 0 && email.length > 0 && phoneNo.length > 0 && msg.length > 0) {
+    if (
+      name.length > 0 &&
+      email.length > 0 &&
+      phoneNo.length > 0 &&
+      msg.length >= 10
+    ) {
       setIsEnabled(true);
     } else {
       setIsEnabled(false);
@@ -57,14 +73,16 @@ function ContactUs() {
           onChange={(e) => setName(e.target.value)} value={name} name="full name" required/>
         <input type="email" className="ContactUs_form_email" placeholder='Email'
           onChange={(e) => setEmail(e.target.value)} value={email} name="email id" required/>
-        <input type="number" className="ContactUs_form_number" placeholder='Phone Number' 
+        <input type="tel" className="ContactUs_form_number" placeholder='Phone Number' 
           onChange={(e) => setPhoneNo(e.target.value)} value={phoneNo} name="phone no" required/>
-        <textarea className="ContactUs_form_message" placeholder='Enter your message'
+        <textarea className="ContactUs_form_message" placeholder='Enter your message (at least 10 characters)'
           onChange={(e) => setMsg(e.target.value)} value={msg} required/>
 
         {err && <div className="ContactUs_error">{err}</div>}
 
-        <button type="submit" disabled={!isEnabled} className="ContactUs_form_submit">Submit</button>
+        <button type="submit" disabled={!isEnabled || loading} className="ContactUs_form_submit">
+          {loading ? "Sending..." : "Submit"}
+        </button>
       </form>}
       {submitted && <div className='ContactUs_wrapper'>
           <div className='ContactUs_text'>Thank you!</div>
