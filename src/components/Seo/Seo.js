@@ -24,6 +24,10 @@ export function Seo({
       <meta name="description" content={description} />
       <meta name="keywords" content={siteConfig.keywords.join(", ")} />
       <meta name="author" content={siteConfig.name} />
+      <meta
+        name="google-site-verification"
+        content="E7iVM0h0nA2MFrkfr2wbXiXjW_cmXFcLH66u_zQyYIA"
+      />
       <link rel="canonical" href={canonicalUrl} />
 
       {noindex ? (
