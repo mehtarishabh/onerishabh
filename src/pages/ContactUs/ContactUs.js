@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 
 import './ContactUs.scss';
 
-// Call the function directly (avoids SPA redirect issues with /api/contact)
-const CONTACT_API =
-  process.env.NODE_ENV === "production"
-    ? "/.netlify/functions/contact"
-    : "/api/contact";
+function encodeFormBody(data) {
+  return Object.keys(data)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join("&");
+}
 
 function ContactUs() {
   const [submitted, setSubmitted] = useState(false);
@@ -24,31 +24,22 @@ function ContactUs() {
     setLoading(true);
 
     try {
-      const res = await fetch(CONTACT_API, {
+      const res = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encodeFormBody({
+          "form-name": "contact",
           name,
           email,
-          phone_number: phoneNo,
+          phone: phoneNo,
           message: msg,
         }),
       });
 
-      const text = await res.text();
-      let body = {};
-      try {
-        body = text ? JSON.parse(text) : {};
-      } catch {
-        throw new Error(
-          res.ok
-            ? "Invalid server response"
-            : `Request failed (${res.status}). The contact service may be unavailable.`,
-        );
-      }
-
       if (!res.ok) {
-        throw new Error(body.error || `Request failed (${res.status})`);
+        throw new Error(
+          `Request failed (${res.status}). Enable form notifications in the Netlify dashboard.`,
+        );
       }
 
       setName("");
@@ -81,16 +72,16 @@ function ContactUs() {
       <h1 className='ContactUs_title'>
         <b>Get In Touch</b>
       </h1>
-      {!submitted && <form className='ContactUs_form' onSubmit={createContact}>
+      {!submitted && <form className='ContactUs_form' name="contact" onSubmit={createContact}>
 
         <input autoFocus type="text" className="ContactUs_form_name" placeholder='Full Name'
-          onChange={(e) => setName(e.target.value)} value={name} name="full name" required/>
+          onChange={(e) => setName(e.target.value)} value={name} name="name" required/>
         <input type="email" className="ContactUs_form_email" placeholder='Email'
-          onChange={(e) => setEmail(e.target.value)} value={email} name="email id" required/>
+          onChange={(e) => setEmail(e.target.value)} value={email} name="email" required/>
         <input type="tel" className="ContactUs_form_number" placeholder='Phone Number' 
-          onChange={(e) => setPhoneNo(e.target.value)} value={phoneNo} name="phone no" required/>
+          onChange={(e) => setPhoneNo(e.target.value)} value={phoneNo} name="phone" required/>
         <textarea className="ContactUs_form_message" placeholder='Enter your message (at least 10 characters)'
-          onChange={(e) => setMsg(e.target.value)} value={msg} required/>
+          onChange={(e) => setMsg(e.target.value)} value={msg} name="message" required/>
 
         {err && <div className="ContactUs_error">{err}</div>}
 

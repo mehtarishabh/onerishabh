@@ -5,16 +5,6 @@
 [build.environment]
   NODE_VERSION = "20.19.0"
 
-[functions]
-  directory = "netlify/functions"
-  node_bundler = "esbuild"
-
-# Contact form API → Netlify Function
-[[redirects]]
-  from = "/api/contact"
-  to = "/.netlify/functions/contact"
-  status = 200
-
 # React Router (SPA): serve index.html for client-side routes on reload
 [[redirects]]
   from = "/*"

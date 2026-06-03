@@ -2,12 +2,14 @@
 
 ## Contact form email
 
-Submissions POST to `/api/contact`, handled by a **Netlify Function** that sends mail via Gmail SMTP.
+The contact form uses **Netlify Forms** (fast, no server timeout). Submissions appear in the Netlify dashboard and can be emailed to you.
 
-**Netlify env vars** (Site settings → Environment variables):
+### One-time Netlify setup
 
-- `GMAIL_USER` — `auraalchemydesignstudio@gmail.com`
-- `GMAIL_APP_PASSWORD` — Google App Password (spaces OK)
-- `CONTACT_EMAIL` — `mehta.rishabh0@gmail.com`
+1. Deploy the site (form is registered at build time via `public/index.html`).
+2. **Netlify → Forms** — confirm the `contact` form appears after a deploy.
+3. **Forms → Form notifications → Add notification → Email**  
+   Set recipient to `mehta.rishabh0@gmail.com`.
+4. Submit the contact page on your live site to test.
 
-**Local testing:** run `npx netlify dev` (serves the function on port 8888). Plain `npm start` proxies to it if Netlify Dev is running.
+`GMAIL_*` env vars are no longer required for the contact form.
