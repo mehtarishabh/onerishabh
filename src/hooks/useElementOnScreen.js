@@ -14,17 +14,20 @@ const useElementOnScreen = (options) => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(callbackFunction, options);
+    const elements = containerRef.current;
 
-    containerRef.current.length > 0 && containerRef.current.forEach((current) => {
-      if(current) observer.observe(current);
-    })
+    if (elements.length > 0) {
+      elements.forEach((current) => {
+        if (current) observer.observe(current);
+      });
+    }
 
     return () => {
-      containerRef.current.length > 0 && containerRef.current.forEach((current) => {
-        if(current) observer.unobserve(current);
-      })
-    }
-  },[containerRef.current, options])
+      elements.forEach((current) => {
+        if (current) observer.unobserve(current);
+      });
+    };
+  }, [options]);
 
   return [containerRef, isVisibleIndex];
 }
