@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://onerishabh.netlify.app/sitemap.xml
+Sitemap: https://onerishabh.in/sitemap.xml

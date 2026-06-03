@@ -5,7 +5,7 @@
 [build.environment]
   NODE_VERSION = "20.19.0"
   # Set your production domain in Netlify UI (overrides default in generate-seo-files.js)
-  # REACT_APP_SITE_URL = "https://your-domain.com"
+  # REACT_APP_SITE_URL = "https://onerishabh.in"
 
 # React Router (SPA): serve index.html for client-side routes on reload
 [[redirects]]

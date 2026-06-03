@@ -5,7 +5,7 @@ export const siteConfig = {
     "Rishabh Mehta | Senior Frontend & Full-Stack JavaScript Developer",
   description:
     "Portfolio of Rishabh Mehta — senior frontend and full-stack developer specializing in React, Vue, Angular, TypeScript, and scalable web applications. Based in India.",
-  url: process.env.REACT_APP_SITE_URL || "https://onerishabh.netlify.app",
+  url: process.env.REACT_APP_SITE_URL || "https://onerishabh.in",
   locale: "en_IN",
   email: "mehta.rishabh0@gmail.com",
   phone: "+91 8747824255",

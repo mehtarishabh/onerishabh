@@ -8,7 +8,7 @@ Personal portfolio site for Rishabh Mehta.
 - JSON-LD `Person` and `WebSite` schema on the home page
 - `sitemap.xml` and `robots.txt` generated at build time
 
-Set **`REACT_APP_SITE_URL`** in Netlify (e.g. `https://your-domain.com`) so canonical URLs and the sitemap use your production domain.
+Set **`REACT_APP_SITE_URL`** to `https://onerishabh.in` in Netlify so canonical URLs and the sitemap match your live domain.
 
 ## Contact form
 

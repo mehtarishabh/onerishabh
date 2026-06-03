@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const siteUrl = (
-  process.env.REACT_APP_SITE_URL || "https://onerishabh.netlify.app"
+  process.env.REACT_APP_SITE_URL || "https://onerishabh.in"
 ).replace(/\/$/, "");
 
 const pages = [
