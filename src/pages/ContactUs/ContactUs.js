@@ -14,31 +14,37 @@ function ContactUs() {
   const [isEnabled, setIsEnabled] = useState(false);
   const contactRef = collection(db, "contact");
 
-
   const createContact = async (e) => {
     e.preventDefault();
+    setErr("");
     try {
-      alert(msg);
-      const docRef = await addDoc(contactRef, { name: name, email: email, phone_number: phoneNo, message: msg });
+      const docRef = await addDoc(contactRef, {
+        name,
+        email,
+        phone_number: phoneNo,
+        message: msg,
+      });
       console.log("Document written with ID: ", docRef.id);
       setName("");
       setEmail("");
-      setPhoneNo();
+      setPhoneNo("");
       setMsg("");
       setSubmitted(true);
-    } catch (e) {
-      console.error("Error adding document: ", e);
-      setErr(e);
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      setErr(
+        error instanceof Error ? error.message : "Failed to save message",
+      );
     }
   };
 
   useEffect(() => {
-    if(name.length > 0 && email.length > 0 && phoneNo.length > 0 && msg.length > 0) {
+    if (name.length > 0 && email.length > 0 && phoneNo.length > 0 && msg.length > 0) {
       setIsEnabled(true);
     } else {
       setIsEnabled(false);
     }
-  }, [name, email, phoneNo, msg])
+  }, [name, email, phoneNo, msg]);
 
   return (
     <div className='ContactUs'>
@@ -56,8 +62,9 @@ function ContactUs() {
         <textarea className="ContactUs_form_message" placeholder='Enter your message'
           onChange={(e) => setMsg(e.target.value)} value={msg} required/>
 
+        {err && <div className="ContactUs_error">{err}</div>}
+
         <button type="submit" disabled={!isEnabled} className="ContactUs_form_submit">Submit</button>
-        <div>{err}</div>
       </form>}
       {submitted && <div className='ContactUs_wrapper'>
           <div className='ContactUs_text'>Thank you!</div>

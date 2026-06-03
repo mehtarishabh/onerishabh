@@ -88,4 +88,15 @@
     text-decoration: underline;
   }
 
+  &_error {
+    margin-top: 16px;
+    font-size: 16px;
+    color: #f87171;
+    width: 100%;
+
+    @include wide {
+      width: 60%;
+    }
+  }
+
 }
