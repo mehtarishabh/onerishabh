@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react';
 
 import './ContactUs.scss';
 
-const CONTACT_API = "/api/contact";
+// Call the function directly (avoids SPA redirect issues with /api/contact)
+const CONTACT_API =
+  process.env.NODE_ENV === "production"
+    ? "/.netlify/functions/contact"
+    : "/api/contact";
 
 function ContactUs() {
   const [submitted, setSubmitted] = useState(false);
@@ -31,10 +35,20 @@ function ContactUs() {
         }),
       });
 
-      const body = await res.json().catch(() => ({}));
+      const text = await res.text();
+      let body = {};
+      try {
+        body = text ? JSON.parse(text) : {};
+      } catch {
+        throw new Error(
+          res.ok
+            ? "Invalid server response"
+            : `Request failed (${res.status}). The contact service may be unavailable.`,
+        );
+      }
 
       if (!res.ok) {
-        throw new Error(body.error || "Failed to send message");
+        throw new Error(body.error || `Request failed (${res.status})`);
       }
 
       setName("");
