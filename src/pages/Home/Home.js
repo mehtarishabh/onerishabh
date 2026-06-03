@@ -60,7 +60,7 @@ function Home() {
             <div className='Home_text'></div>
             <div className='Home_text'></div>
             <div className='Home_text'>1. Achieved a significant reduction in Net Promoter Score (NPS) and streamlined enterprise onboarding from 24 hours to just 30 minutes.</div>
-            <div className='Home_text'>2. Led a team of four developers in designing and implementing an <a className='pink'>Enterprise Approval framework</a>, enhancing operational efficiency and user experience.</div>
+            <div className='Home_text'>2. Led a team of four developers in designing and implementing an <span className='pink'>Enterprise Approval framework</span>, enhancing operational efficiency and user experience.</div>
             <div className='Home_text'>3. Strengthened security measures to protect sensitive enterprise data, ensuring compliance with industry standards and increasing stakeholder trust.</div>
             <div className='Home_text'>4. Developed interactive data visualization tools using Plotly, improving data representation
                                           and analysis capabilities for stakeholders.</div>
@@ -71,9 +71,9 @@ function Home() {
             <div className='Home_text'></div>
             <div className='Home_text'></div>
             <div className='Home_text'>1. Collaborated with product mangers to finalize the designs, gathered requirements and contributed in the UX designs.</div>
-            <div className='Home_text'>2. Led and managed a team of 4 devs for the development of <a className='pink'>Teacher Dashboard</a> project.</div>
+            <div className='Home_text'>2. Led and managed a team of 4 devs for the development of <span className='pink'>Teacher Dashboard</span> project.</div>
             <div className='Home_text'>3. Build minor features in Admin Console, Student Dashboard, Comms Platform and Refunds.</div>
-            <div className='Home_text'>4. Implemented <a className='pink'>Quality Control</a> platform from scratch.</div>
+            <div className='Home_text'>4. Implemented <span className='pink'>Quality Control</span> platform from scratch.</div>
             <div className='Home_text'><b>Technologies Used</b> - React.js, Redux, Javascript, Typescript, HTML, CSS, Material UI, AWS, Python etc.</div>
 
           <div className='Home_subheading'>Y Media Labs (Senior Software Engineer)</div>
