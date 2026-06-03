@@ -20,10 +20,10 @@ function normalizePassword(password) {
 
 function escapeHtml(value) {
   return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;");
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 
 exports.handler = async (event) => {
@@ -73,6 +73,8 @@ exports.handler = async (event) => {
       connectionTimeout: 10_000,
     });
 
+    await transporter.verify();
+
     await transporter.sendMail({
       from: `"${siteName}" <${gmailUser}>`,
       to: contactEmail,
@@ -101,8 +103,15 @@ exports.handler = async (event) => {
     return jsonResponse(200, { success: true, message: "Message sent" });
   } catch (err) {
     console.error("[contact] Failed to send email:", err);
-    return jsonResponse(500, {
-      error: err instanceof Error ? err.message : "Failed to send message",
-    });
+
+    let message =
+      err instanceof Error ? err.message : "Failed to send message";
+
+    if (/invalid login|username and password not accepted/i.test(message)) {
+      message =
+        "Gmail login failed. Check GMAIL_USER and GMAIL_APP_PASSWORD in Netlify environment variables.";
+    }
+
+    return jsonResponse(500, { error: message });
   }
 };
