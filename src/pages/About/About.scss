@@ -16,8 +16,14 @@
     width: 200px;
   }
 
+  &_heading {
+    margin: 0 0 16px;
+    font-size: 28px;
+    color: $yellow;
+  }
+
   &_text {
-    padding-top: 40px;
+    padding-top: 16px;
     font-size: 20px;
     color: $yellow;
     text-align: justify;

@@ -33,12 +33,12 @@ function MainMenu() {
           <span></span>
           <span></span>
         </label>
-      {showMenu && <div className='MainMenu'>
+      {showMenu && <nav className='MainMenu' aria-label="Primary navigation">
         <div className='MainMenu_empty'></div>
         <NavLink to="/" className="MainMenu_items" onClick={() => { setShowMenu(false); inputRef.current.click(); }}>Home</NavLink>
         <NavLink to="/contact" className="MainMenu_items" onClick={() => { setShowMenu(false); inputRef.current.click(); }}>Contact</NavLink>
         <NavLink to="/about" className="MainMenu_items" onClick={() => { setShowMenu(false); inputRef.current.click(); }}>About</NavLink>
-      </div>}
+      </nav>}
     </div>
   );
 }

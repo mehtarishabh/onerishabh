@@ -4,6 +4,9 @@ import { scroller } from "react-scroll";
 import Main from './Main/Main';
 import useElementOnScreen from '../../hooks/useElementOnScreen.js';
 import SideMenu from '../../ui/SideMenu/SideMenu';
+import { Seo } from '../../components/Seo/Seo';
+import { PersonJsonLd, WebSiteJsonLd } from '../../components/Seo/JsonLd';
+import { pageSeo } from '../../lib/site-config';
 import './Home.scss';
 
 function Home() {
@@ -34,13 +37,16 @@ function Home() {
 
   return (
     <div className='Home'>
+      <Seo {...pageSeo.home} />
+      <PersonJsonLd />
+      <WebSiteJsonLd />
       <Main onScrolldownClick={() => scrollToSection("Home_skills")}/>
       <div className='Home_stickyContainer'>
         <div className='Home_sideMenu'>
           <SideMenu onSideMenuClick={(index) => scrollToSection(menuItemsClass[index], index)} activeIndex={activeIndex}/>
         </div>
         <section className={menuItemsClass[0]} ref={el => (containerRefs.current = [...containerRefs.current, el])}>
-          <h1 className='Home_heading'>Skills</h1>
+          <h2 className='Home_heading'>Skills</h2>
           <div className='Home_details'>
             <div className='Home_subheading'>Primary Skills</div>
             <div className='Home_text'>Javascript, Typescript, HTML5, CSS3, SCSS</div>
@@ -52,7 +58,7 @@ function Home() {
           </div>
         </section>
       <section className={menuItemsClass[1]}>
-        <h1 className='Home_heading'>Work Experience</h1>
+        <h2 className='Home_heading'>Work Experience</h2>
         <div className='Home_details'>
 
         <div className='Home_subheading' ref={el => (containerRefs.current = [...containerRefs.current, el])}>Tanla Platforms (SDE-4 Technical Lead)</div>
@@ -122,7 +128,7 @@ function Home() {
         </div>
       </section>
       <section className={menuItemsClass[2]} ref={el => (containerRefs.current = [...containerRefs.current, el])}>
-        <h1 className='Home_heading'>Education</h1>
+        <h2 className='Home_heading'>Education</h2>
         <div className='Home_details'>
           <div className='Home_subheading'>B. Tech: 
           </div>
@@ -138,7 +144,7 @@ function Home() {
         </div>
       </section>
       <section className={menuItemsClass[3]} ref={el => (containerRefs.current = [...containerRefs.current, el])}>
-        <h1 className='Home_heading'>Accolades</h1>
+        <h2 className='Home_heading'>Accolades</h2>
         <div className='Home_subheading'></div>
         <div className='Home_details'>
           <div className='Home_text'>1. Among top 0.01% out of 13 lakh students in AIEEE exam. </div>
@@ -146,7 +152,7 @@ function Home() {
           <div className='Home_text'>3. Achieved 2 star in leetcode; having solved 300 problems.</div></div>
       </section>
       <section className={menuItemsClass[4]} ref={el => (containerRefs.current = [...containerRefs.current, el])}>
-        <h1 className='Home_heading'>Certifications</h1>
+        <h2 className='Home_heading'>Certifications</h2>
         <div className='Home_subheading'></div>
         <div className='Home_details'>
           <div className='Home_text'>1. Completed <b>AWS Certified Developer - Associate</b> certificate.</div>

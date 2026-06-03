@@ -1,10 +1,21 @@
+import { Seo } from '../../components/Seo/Seo';
+import { pageSeo } from '../../lib/site-config';
 import './About.scss';
 
 function About() {
   return (
     <div className='About'>
-      <img className='About_image' alt="rishabh" src={window.location.origin + '/images/rishabh.jpg'}></img>
+      <Seo {...pageSeo.about} />
+      <img
+        className='About_image'
+        alt="Rishabh Mehta — senior frontend and full-stack developer"
+        src={`${window.location.origin}/images/rishabh.jpg`}
+        width="280"
+        height="280"
+        loading="lazy"
+      />
       <div className='About_text'>
+        <h1 className="About_heading">About Rishabh Mehta</h1>
         Hello, <br /><br />
         I am Rishabh Mehta, born and brought up in kota, rajasthan. Kota is very famous for engineering and medical coaching classes.
         I did my schooling from here and completed graduation from NIT Goa, which is one of the top tier college in india. I was 

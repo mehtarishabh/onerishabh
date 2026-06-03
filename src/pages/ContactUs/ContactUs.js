@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { Seo } from '../../components/Seo/Seo';
+import { pageSeo } from '../../lib/site-config';
 import './ContactUs.scss';
 
 const FORM_SUBMIT_EMAIL = "mehta.rishabh0@gmail.com";
@@ -77,6 +79,7 @@ function ContactUs() {
 
   return (
     <div className='ContactUs'>
+      <Seo {...pageSeo.contact} />
       <h1 className='ContactUs_title'>
         <b>Get In Touch</b>
       </h1>
@@ -113,7 +116,7 @@ function ContactUs() {
       </div>
       <div className='ContactUs_wrapper'>
         <span className='ContactUs_text'><b>Email: </b></span>
-        <span className='ContactUs_data'>mehta.rishabh0@gmail.com</span>
+        <a className='ContactUs_data' href="mailto:mehta.rishabh0@gmail.com">mehta.rishabh0@gmail.com</a>
       </div>
     </div>
   );
