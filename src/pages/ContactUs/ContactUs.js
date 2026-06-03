@@ -2,11 +2,7 @@ import { useEffect, useState } from 'react';
 
 import './ContactUs.scss';
 
-function encodeFormBody(data) {
-  return Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join("&");
-}
+const FORM_SUBMIT_EMAIL = "mehta.rishabh0@gmail.com";
 
 function ContactUs() {
   const [submitted, setSubmitted] = useState(false);
@@ -24,21 +20,33 @@ function ContactUs() {
     setLoading(true);
 
     try {
-      const res = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encodeFormBody({
-          "form-name": "contact",
-          name,
-          email,
-          phone: phoneNo,
-          message: msg,
-        }),
-      });
+      const res = await fetch(
+        `https://formsubmit.co/ajax/${encodeURIComponent(FORM_SUBMIT_EMAIL)}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            phone: phoneNo,
+            message: msg,
+            _subject: `New inquiry from ${name}`,
+            _template: "table",
+            _captcha: "false",
+          }),
+        },
+      );
 
-      if (!res.ok) {
+      const body = await res.json().catch(() => ({}));
+
+      if (!res.ok || body.success === "false" || body.success === false) {
         throw new Error(
-          `Request failed (${res.status}). Enable form notifications in the Netlify dashboard.`,
+          typeof body.message === "string"
+            ? body.message
+            : "Failed to send message. Please email mehta.rishabh0@gmail.com directly.",
         );
       }
 
@@ -72,15 +80,15 @@ function ContactUs() {
       <h1 className='ContactUs_title'>
         <b>Get In Touch</b>
       </h1>
-      {!submitted && <form className='ContactUs_form' name="contact" onSubmit={createContact}>
+      {!submitted && <form className='ContactUs_form' onSubmit={createContact}>
 
-        <input autoFocus type="text" className="ContactUs_form_name" placeholder='Full Name'
+        <input autoFocus type="text" className='ContactUs_form_name' placeholder='Full Name'
           onChange={(e) => setName(e.target.value)} value={name} name="name" required/>
-        <input type="email" className="ContactUs_form_email" placeholder='Email'
+        <input type="email" className='ContactUs_form_email' placeholder='Email'
           onChange={(e) => setEmail(e.target.value)} value={email} name="email" required/>
-        <input type="tel" className="ContactUs_form_number" placeholder='Phone Number' 
+        <input type="tel" className='ContactUs_form_number' placeholder='Phone Number' 
           onChange={(e) => setPhoneNo(e.target.value)} value={phoneNo} name="phone" required/>
-        <textarea className="ContactUs_form_message" placeholder='Enter your message (at least 10 characters)'
+        <textarea className='ContactUs_form_message' placeholder='Enter your message (at least 10 characters)'
           onChange={(e) => setMsg(e.target.value)} value={msg} name="message" required/>
 
         {err && <div className="ContactUs_error">{err}</div>}
